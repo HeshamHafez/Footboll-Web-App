@@ -1,1 +1,32 @@
-<p>matches works!</p>
+<!--fixtures area start-->
+<div class="laliga-box pad60">
+    <div class="container">
+        <div #div1 class="form-group">
+            <label for="my-select">Top Leagues</label>
+            <select [(ngModel)]="SelLeagueId" id="my-select" class="form-control" name="Top Leagues">
+              <option *ngFor="let league of leaguesList" (click)="getSelected()" [value]="league.league_id">{{league.name}}</option>
+          </select>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <div class="fixture-box bb-1" *ngFor="let match of matchesList">
+                    <h4 class="text-center">{{match.team.league.name}}</h4>
+                    <div class="club-fixture">
+                        <div class="club-img">
+                            <img class="sm-img" src="https://dummyimage.com/100x100.jpg&text={{match.team.name}}" alt="club logo">
+                            <span>{{match.team.name}}</span>
+                        </div>
+                        <div class="club-schedule text-center">
+                            <h5>{{match.match.date}}</h5>
+                        </div>
+                        <div class="club-img">
+                            <span>{{match.team.name}}</span>
+                            <img class="sm-img" src="https://dummyimage.com/100x100.jpg&text={{match.team.name}}" alt="club logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--fixtures area end-->
