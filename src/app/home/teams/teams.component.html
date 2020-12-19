@@ -1,1 +1,19 @@
-<p>teams works!</p>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Team Name</th>
+                <th scope="col">coach</th>
+                <th scope="col">League Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let team of teamsList">
+                <td>{{team.name}}</td>
+                <td>{{team.coach}}</td>
+                <td>{{team.league.name}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

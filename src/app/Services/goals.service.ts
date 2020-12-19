@@ -1,3 +1,6 @@
+import { Igoals } from './../Models/Interfaces/igoals';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +8,13 @@ import { Injectable } from '@angular/core';
 })
 export class GoalsService {
 
-  constructor() { }
+  constructor(private httpGoals:HttpClient) { }
+
+  getGoals():Observable<Igoals>{
+    return this.httpGoals.get<Igoals>(`http://localhost:10278/api/goals`);
+  }
+
+  getGoalsPerPlayer(playerId:number):Observable<Igoals>{
+    return this.httpGoals.get<Igoals>(`http://localhost:10278/api/goals/${playerId}`);
+  }
 }
