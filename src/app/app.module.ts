@@ -17,6 +17,7 @@ import { ContactComponent } from './home/contact/contact.component';
 import { PagenotfoundComponent } from './home/pagenotfound/pagenotfound.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { SingleTeamComponent } from './home/teams/single-team/single-team.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     TablesComponent,
     AboutComponent,
     ContactComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    SingleTeamComponent
   ],
   imports: [
     BrowserModule,

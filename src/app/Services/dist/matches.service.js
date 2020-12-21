@@ -6,26 +6,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.TeamsService = void 0;
+exports.MatchesService = void 0;
 var core_1 = require("@angular/core");
-var TeamsService = /** @class */ (function () {
-    function TeamsService(httpTeams) {
-        this.httpTeams = httpTeams;
+var MatchesService = /** @class */ (function () {
+    function MatchesService(httpMatches) {
+        this.httpMatches = httpMatches;
     }
-    TeamsService.prototype.getTeams = function () {
-        return this.httpTeams.get("http://localhost:10278/api/teams");
+    MatchesService.prototype.getMatches = function () {
+        return this.httpMatches.get("http://localhost:10278/api/matches");
     };
-    TeamsService.prototype.getTeamsById = function (teamId) {
-        return this.httpTeams.get("http://localhost:10278/api/teams/" + teamId);
+    MatchesService.prototype.getMatchesById = function (id) {
+        return this.httpMatches.get("http://localhost:10278/api/matches/" + id);
     };
-    TeamsService.prototype.getLeagueTeams = function (league_id) {
-        return this.httpTeams.get("http://localhost:10278/api/LeagueTeams/" + league_id);
+    MatchesService.prototype.getMatchesByLeagueId = function (id) {
+        return this.httpMatches.get("http://localhost:10278/api/matchesByLeague/" + id);
     };
-    TeamsService = __decorate([
+    MatchesService = __decorate([
         core_1.Injectable({
             providedIn: 'root'
         })
-    ], TeamsService);
-    return TeamsService;
+    ], MatchesService);
+    return MatchesService;
 }());
-exports.TeamsService = TeamsService;
+exports.MatchesService = MatchesService;

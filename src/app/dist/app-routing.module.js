@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.AppRoutingModule = void 0;
+var single_team_component_1 = require("./home/teams/single-team/single-team.component");
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var about_component_1 = require("./home/about/about.component");
@@ -22,9 +23,10 @@ var routes = [
     { path: 'Home', component: home_component_1.HomeComponent },
     { path: 'News', component: news_component_1.NewsComponent },
     { path: 'Teams', component: teams_component_1.TeamsComponent },
+    { path: 'Teams/:team_id', component: single_team_component_1.SingleTeamComponent },
     { path: 'Matches', component: matches_component_1.MatchesComponent },
     { path: 'Leagues', component: leagues_component_1.LeaguesComponent },
-    { path: 'Tables', component: tables_component_1.TablesComponent },
+    { path: 'Tables/:league_id', component: tables_component_1.TablesComponent },
     { path: 'About', component: about_component_1.AboutComponent },
     { path: 'Contact', component: contact_component_1.ContactComponent },
     { path: '', redirectTo: "/Home", pathMatch: 'full' },

@@ -1,0 +1,40 @@
+<!--club-list-area start-->
+<div class="club-list-area pad60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-3">
+                <div class="club-authority">
+                    <img src="https://dummyimage.com/200x200.jpg&text={{team.name}}" alt="club logo">
+                    <h4 class="mt30">{{team.name}}</h4>
+                    <p>football club</p>
+                    <div class="authority-box mt30">
+                        <p><strong>Coach</strong> : {{team.coach}} </p>
+                        <p><strong>Leagues</strong> : {{team.league.name}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-9">
+
+                <div class="team-box">
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">squad</a>
+                    </div>
+                    <div class="tab-content mt40" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-12" *ngFor="let player of playersList">
+                                    <div class="team-mem mb30">
+                                        <img class="w-100" src="assets/player.png" alt="player img">
+                                        <h5 class="mt10" style="text-align: center;">{{player.fullname}}</h5>
+                                        <h6 style="text-align: center;">{{player.number}}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--club-list-area end-->

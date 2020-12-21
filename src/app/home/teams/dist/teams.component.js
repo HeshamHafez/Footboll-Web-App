@@ -9,12 +9,21 @@ exports.__esModule = true;
 exports.TeamsComponent = void 0;
 var core_1 = require("@angular/core");
 var TeamsComponent = /** @class */ (function () {
-    function TeamsComponent(_teamsServ) {
+    function TeamsComponent(_teamsServ, _leagueServ) {
         this._teamsServ = _teamsServ;
+        this._leagueServ = _leagueServ;
     }
     TeamsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this._teamsServ.getTeams().subscribe(function (teamsData) { return _this.teamsList = teamsData; }, function (error) { return console.log(error); });
+        // this._teamsServ.getTeams().subscribe(
+        //   (teamsData)=>this.teamsList = teamsData,
+        //   (error)=>console.log(error)
+        // );
+        this._leagueServ.getLeagues().subscribe(function (leagueData) { return _this.leaguesList = leagueData; }, function (error) { return console.log(error); });
+    };
+    TeamsComponent.prototype.getSelected = function () {
+        var _this = this;
+        this._teamsServ.getLeagueTeams(this.SelLeagueId).subscribe(function (leagueData) { return _this.teamsList = leagueData; }, function (error) { return console.log(error); });
     };
     TeamsComponent = __decorate([
         core_1.Component({

@@ -1,3 +1,5 @@
+import { MatchesService } from './../../Services/matches.service';
+import { Imatches } from './../../Models/Interfaces/imatches';
 import { Ileagues } from './../../Models/Interfaces/ileagues';
 import { LeaguesService } from './../../Services/leagues.service';
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
@@ -11,16 +13,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./matches.component.css']
 })
 export class MatchesComponent implements OnInit, OnChanges{
-  matchesList:IteamMatches[];
+  matchesList:Imatches[];
   leaguesList:Ileagues[];
   SelLeagueId:number;
   LeagueName:string;
-  constructor(private _matcheServ:TeamMatchesService, private _leagueServ:LeaguesService, private router:Router) { }
+  constructor(private _matcheServ:MatchesService, private _leagueServ:LeaguesService, private router:Router) { }
 
   ngOnChanges(): void {
   }
-
-
 
   ngOnInit(): void {
     this._leagueServ.getLeagues().subscribe(
@@ -30,7 +30,7 @@ export class MatchesComponent implements OnInit, OnChanges{
   }
 
   getSelected():void{
-    this._matcheServ.getTeamMatchesPerId(this.SelLeagueId).subscribe(
+    this._matcheServ.getMatchesByLeagueId(this.SelLeagueId).subscribe(
       (leagueData)=>this.matchesList = leagueData,
       (error)=>console.log(error)
     );

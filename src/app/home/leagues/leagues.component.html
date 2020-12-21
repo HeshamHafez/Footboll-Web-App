@@ -14,7 +14,7 @@
         </tbody>
     </table>
 </div> -->
-
+<!-- page title & breadcrumbs start -->
 <div class="point-table pad60">
     <div class="container">
         <div class="row">
@@ -23,17 +23,17 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th colspan="4">League Name</th>
-                                <th scope="col">League Country</th>
+                                <th colspan="3">League Name</th>
+                                <th colspan="2">League Country</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let league of LeagueList">
-                                <td colspan="4" class="team">
+                                <td colspan="3" class="team">
                                     <div class="team-box"><img class="s-img" style="background-color: transparent;" src="https://dummyimage.com/100x100.jpg&text={{league.name}}" alt="">
-                                        <span>{{league.name}}</span></div>
+                                        <span><a class=" singleTeam btn btn-lg" [routerLink]="['/Tables', league.league_id]">{{league.name}}</a></span></div>
                                 </td>
-                                <td>{{league.countries}}</td>
+                                <td colspan="2">{{league.countries}}</td>
                             </tr>
                         </tbody>
                     </table>

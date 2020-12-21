@@ -14,11 +14,11 @@ export class TeamsService {
     return this.httpTeams.get<ITeams[]>(`http://localhost:10278/api/teams`);
   }
 
-  getTeamsById(teamId:number):Observable<ITeams[]>{
-    return this.httpTeams.get<ITeams[]>(`http://localhost:10278/api/teams/${teamId}`);
+  getTeamsById(teamId:number):Observable<ITeams>{
+    return this.httpTeams.get<ITeams>(`http://localhost:10278/api/teams/${teamId}`);
   }
 
-  getLeagueTeams(leagueId:number):Observable<ITeams[]>{
-    return this.httpTeams.get<ITeams[]>(`http://localhost:10278/api/LeagueTeams/${leagueId}`);
+  getLeagueTeams(league_id:number):Observable<ITeams[]>{
+    return this.httpTeams.get<ITeams[]>(`http://localhost:10278/api/LeagueTeams/${league_id}`);
   }
 }

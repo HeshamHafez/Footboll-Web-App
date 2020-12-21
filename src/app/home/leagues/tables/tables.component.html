@@ -1,1 +1,40 @@
-<p>tables works!</p>
+<div class="point-table pad60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th colspan="4">team</th>
+                                <th scope="col">p</th>
+                                <th scope="col">w</th>
+                                <th scope="col">d</th>
+                                <th scope="col">l</th>
+                                <th scope="col">GS</th>
+                                <th scope="col">GA</th>
+                                <th scope="col">PTS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let team of teamsList">
+                                <td colspan="4" class="team">
+                                    <div class="team-box"><img class="sm-img" src="https://dummyimage.com/100x100.jpg&text={{team.name}}" alt="{{team.name}}">
+                                        <span>{{team.name}}</span></div>
+                                </td>
+                                <td>{{team.wins + team.draws + team.loss}}</td>
+                                <td>{{team.wins}}</td>
+                                <td>{{team.draws}}</td>
+                                <td>{{team.loss}}</td>
+                                <td>{{team.goals_for}}</td>
+                                <td>{{team.goals_against}}</td>
+                                <td>{{team.points}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a class="btn btn-primary" (click)="goBack()">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

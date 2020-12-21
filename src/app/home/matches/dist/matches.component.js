@@ -22,7 +22,7 @@ var MatchesComponent = /** @class */ (function () {
     };
     MatchesComponent.prototype.getSelected = function () {
         var _this = this;
-        this._matcheServ.getTeamMatchesPerId(this.SelLeagueId).subscribe(function (leagueData) { return _this.matchesList = leagueData; }, function (error) { return console.log(error); });
+        this._matcheServ.getMatchesByLeagueId(this.SelLeagueId).subscribe(function (leagueData) { return _this.matchesList = leagueData; }, function (error) { return console.log(error); });
     };
     MatchesComponent = __decorate([
         core_1.Component({

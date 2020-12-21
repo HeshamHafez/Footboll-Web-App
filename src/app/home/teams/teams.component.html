@@ -1,5 +1,41 @@
 <div class="container">
-    <table class="table">
+    <div #div1 class="form-group mt-5">
+        <label for="my-select">Top Leagues</label>
+        <select [(ngModel)]="SelLeagueId" id="my-select" class="form-control" name="Top Leagues">
+      <option *ngFor="let league of leaguesList" (click)="getSelected()" [value]="league.league_id">{{league.name}}</option>
+  </select>
+    </div>
+
+    <div class="point-table pad60">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th colspan="3">Team Name</th>
+                                    <th colspan="2">Coach</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let team of teamsList">
+                                    <td colspan="3" class="team">
+                                        <div class="team-box"><img class="sm-img" src="https://dummyimage.com/100x100.jpg&text={{team.name}}" alt="">
+                                            <span><a class=" singleTeam btn btn-lg" [routerLink]="['/Teams',team.team_id]">{{team.name}}</a></span></div>
+                                    </td>
+                                    <td colspan="2">{{team.coach}}</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <table class="table">
         <thead>
             <tr>
                 <th scope="col">Team Name</th>
@@ -16,4 +52,4 @@
             </tr>
         </tbody>
     </table>
-</div>
+</div> -->

@@ -1,3 +1,4 @@
+import { SingleTeamComponent } from './home/teams/single-team/single-team.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './home/about/about.component';
@@ -14,9 +15,10 @@ const routes: Routes = [
   {path:'Home', component:HomeComponent},
   {path:'News', component:NewsComponent},
   {path:'Teams', component:TeamsComponent},
+  {path:'Teams/:team_id', component:SingleTeamComponent},
   {path:'Matches', component:MatchesComponent},
   {path:'Leagues', component:LeaguesComponent},
-  {path:'Tables', component:TablesComponent},
+  {path:'Tables/:league_id', component:TablesComponent},
   {path:'About', component:AboutComponent},
   {path:'Contact', component:ContactComponent},
   {path:'',redirectTo:"/Home",pathMatch:'full'},
