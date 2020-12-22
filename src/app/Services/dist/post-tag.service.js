@@ -6,26 +6,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.PlayersService = void 0;
+exports.PostTagService = void 0;
 var core_1 = require("@angular/core");
-var PlayersService = /** @class */ (function () {
-    function PlayersService(httpPlayer) {
-        this.httpPlayer = httpPlayer;
+var PostTagService = /** @class */ (function () {
+    function PostTagService(httpPostTag) {
+        this.httpPostTag = httpPostTag;
     }
-    PlayersService.prototype.getPlayers = function () {
-        return this.httpPlayer.get("http://localhost:10278/api/players");
+    PostTagService.prototype.getNews = function () {
+        return this.httpPostTag.get("http://localhost:10278/api/PostTags");
     };
-    PlayersService.prototype.getPlayersById = function (player_id) {
-        return this.httpPlayer.get("http://localhost:10278/api/players/" + player_id);
+    PostTagService.prototype.getPostTags = function (post_id) {
+        return this.httpPostTag.get("http://localhost:10278/api/PostTags/" + post_id);
     };
-    PlayersService.prototype.getplayerTeam = function (teamId) {
-        return this.httpPlayer.get("http://localhost:10278/api/playerTeam/" + teamId);
+    PostTagService.prototype.getTagPosts = function (tag_id) {
+        return this.httpPostTag.get("http://localhost:10278/api/tagposts/" + tag_id);
     };
-    PlayersService = __decorate([
+    PostTagService = __decorate([
         core_1.Injectable({
             providedIn: 'root'
         })
-    ], PlayersService);
-    return PlayersService;
+    ], PostTagService);
+    return PostTagService;
 }());
-exports.PlayersService = PlayersService;
+exports.PostTagService = PostTagService;

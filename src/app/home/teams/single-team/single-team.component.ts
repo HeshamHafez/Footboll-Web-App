@@ -11,7 +11,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./single-team.component.css']
 })
 export class SingleTeamComponent implements OnInit {
-@Input() selTeam:number;
 team:ITeams;
 playersList:Iplayers[];
 teamId:number;

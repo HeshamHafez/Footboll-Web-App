@@ -25,7 +25,7 @@
                                 <div class="col-lg-4 col-md-12" *ngFor="let player of playersList">
                                     <div class="team-mem mb30">
                                         <img class="w-100" src="assets/player.png" alt="player img">
-                                        <h5 class="mt10" style="text-align: center;">{{player.fullname}}</h5>
+                                        <h5 class="mt10" style="text-align: center;"><a class="btn btn-outline-success col-sm-8" [routerLink]="['/Player',player.player_id]">{{player.fullname}}</a></h5>
                                         <h6 style="text-align: center;">{{player.number}}</h6>
                                     </div>
                                 </div>

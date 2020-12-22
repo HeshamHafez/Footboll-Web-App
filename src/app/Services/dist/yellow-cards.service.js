@@ -13,16 +13,16 @@ var YellowCardsService = /** @class */ (function () {
         this.httpYellow = httpYellow;
     }
     YellowCardsService.prototype.getYellow = function () {
-        return this.httpYellow.get("localhost:10278/api/yellow_cards");
+        return this.httpYellow.get("http://localhost:10278/api/yellow_cards");
     };
-    YellowCardsService.prototype.getYellowPerPlayer = function (playerId) {
-        return this.httpYellow.get("localhost:10278/api/yellowPlayer/" + playerId);
+    YellowCardsService.prototype.getYellowPerPlayer = function (player_id) {
+        return this.httpYellow.get("http://localhost:10278/api/yellowPlayer/" + player_id);
     };
     YellowCardsService.prototype.getYellowPerMatch = function (matchId) {
-        return this.httpYellow.get("localhost:10278/api/yellowMatch/" + matchId);
+        return this.httpYellow.get("http://localhost:10278/api/yellowMatch/" + matchId);
     };
     YellowCardsService.prototype.getYellowPerTeam = function (teamId) {
-        return this.httpYellow.get("localhost:10278/api/yellowTeam/" + teamId);
+        return this.httpYellow.get("http://localhost:10278/api/yellowTeam/" + teamId);
     };
     YellowCardsService = __decorate([
         core_1.Injectable({

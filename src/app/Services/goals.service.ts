@@ -1,3 +1,4 @@
+import { IgoalsCount } from './../Models/Interfaces/igoals-count';
 import { Igoals } from './../Models/Interfaces/igoals';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -14,7 +15,7 @@ export class GoalsService {
     return this.httpGoals.get<Igoals>(`http://localhost:10278/api/goals`);
   }
 
-  getGoalsPerPlayer(playerId:number):Observable<Igoals>{
-    return this.httpGoals.get<Igoals>(`http://localhost:10278/api/goals/${playerId}`);
+  getGoalsPerPlayer(playerId:number):Observable<IgoalsCount>{
+    return this.httpGoals.get<IgoalsCount>(`http://localhost:10278/api/goals/${playerId}`);
   }
 }

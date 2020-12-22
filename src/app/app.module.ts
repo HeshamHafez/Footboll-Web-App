@@ -18,6 +18,7 @@ import { PagenotfoundComponent } from './home/pagenotfound/pagenotfound.componen
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SingleTeamComponent } from './home/teams/single-team/single-team.component';
+import { PlayerComponent } from './home/player/player.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { SingleTeamComponent } from './home/teams/single-team/single-team.compon
     AboutComponent,
     ContactComponent,
     PagenotfoundComponent,
-    SingleTeamComponent
+    SingleTeamComponent,
+    PlayerComponent,
   ],
   imports: [
     BrowserModule,

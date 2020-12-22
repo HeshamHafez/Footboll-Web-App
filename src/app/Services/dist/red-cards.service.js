@@ -13,16 +13,16 @@ var RedCardsService = /** @class */ (function () {
         this.httpRed = httpRed;
     }
     RedCardsService.prototype.getRed = function () {
-        return this.httpRed.get("localhost:10278/api/red_cards");
+        return this.httpRed.get("http://localhost:10278/api/red_cards");
     };
     RedCardsService.prototype.getRedPerPlayer = function (playerId) {
-        return this.httpRed.get("localhost:10278/api/redPlayer/" + playerId);
+        return this.httpRed.get("http://localhost:10278/api/redPlayer/" + playerId);
     };
     RedCardsService.prototype.getRedPerMatch = function (matchId) {
-        return this.httpRed.get("localhost:10278/api/redMatch/" + matchId);
+        return this.httpRed.get("http://localhost:10278/api/redMatch/" + matchId);
     };
     RedCardsService.prototype.getRedPerTeam = function (teamId) {
-        return this.httpRed.get("localhost:10278/api/redTeam/" + teamId);
+        return this.httpRed.get("http://localhost:10278/api/redTeam/" + teamId);
     };
     RedCardsService = __decorate([
         core_1.Injectable({

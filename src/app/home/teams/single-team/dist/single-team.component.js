@@ -22,9 +22,6 @@ var SingleTeamComponent = /** @class */ (function () {
         this._teamServ.getTeamsById(this.teamId).subscribe(function (teamData) { return _this.team = teamData; }, function (error) { return console.log(error); });
         this._playerServ.getplayerTeam(this.teamId).subscribe(function (playerData) { return _this.playersList = playerData; }, function (error) { return console.log(error); });
     };
-    __decorate([
-        core_1.Input()
-    ], SingleTeamComponent.prototype, "selTeam");
     SingleTeamComponent = __decorate([
         core_1.Component({
             selector: 'app-single-team',

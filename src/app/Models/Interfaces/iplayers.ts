@@ -1,9 +1,9 @@
 import { ITeams } from './iteams';
 export interface Iplayers {
-  "player_id": 1,
-    "fullname": "sample string 2",
-    "age": 3,
-    "number": 4,
-    "team_id": 1,
+  "player_id": number,
+    "fullname": string,
+    "age": number,
+    "number": number,
+    "team_id": number,
     "team": ITeams
 }

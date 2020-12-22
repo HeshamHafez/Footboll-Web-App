@@ -14,8 +14,8 @@ export class PlayersService {
     return this.httpPlayer.get<Iplayers[]>(`http://localhost:10278/api/players`);
   }
 
-  getPlayersById(playerId:number):Observable<Iplayers[]>{
-    return this.httpPlayer.get<Iplayers[]>(`http://localhost:10278/api/teams/${playerId}`);
+  getPlayersById(player_id:number):Observable<Iplayers>{
+    return this.httpPlayer.get<Iplayers>(`http://localhost:10278/api/players/${player_id}`);
   }
 
   getplayerTeam(teamId:number):Observable<Iplayers[]>{

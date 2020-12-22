@@ -6,26 +6,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.PlayersService = void 0;
+exports.PostsService = void 0;
 var core_1 = require("@angular/core");
-var PlayersService = /** @class */ (function () {
-    function PlayersService(httpPlayer) {
-        this.httpPlayer = httpPlayer;
+var PostsService = /** @class */ (function () {
+    function PostsService(httpPost) {
+        this.httpPost = httpPost;
     }
-    PlayersService.prototype.getPlayers = function () {
-        return this.httpPlayer.get("http://localhost:10278/api/players");
+    PostsService.prototype.getPost = function () {
+        return this.httpPost.get("http://localhost:10278/api/posts");
     };
-    PlayersService.prototype.getPlayersById = function (player_id) {
-        return this.httpPlayer.get("http://localhost:10278/api/players/" + player_id);
+    PostsService.prototype.getPostsById = function (post_id) {
+        return this.httpPost.get("http://localhost:10278/api/posts/" + post_id);
     };
-    PlayersService.prototype.getplayerTeam = function (teamId) {
-        return this.httpPlayer.get("http://localhost:10278/api/playerTeam/" + teamId);
-    };
-    PlayersService = __decorate([
+    PostsService = __decorate([
         core_1.Injectable({
             providedIn: 'root'
         })
-    ], PlayersService);
-    return PlayersService;
+    ], PostsService);
+    return PostsService;
 }());
-exports.PlayersService = PlayersService;
+exports.PostsService = PostsService;

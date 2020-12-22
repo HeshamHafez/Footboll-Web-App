@@ -10,6 +10,7 @@ import { MatchesComponent } from './home/matches/matches.component';
 import { NewsComponent } from './home/news/news.component';
 import { PagenotfoundComponent } from './home/pagenotfound/pagenotfound.component';
 import { TeamsComponent } from './home/teams/teams.component';
+import { PlayerComponent } from './home/player/player.component';
 
 const routes: Routes = [
   {path:'Home', component:HomeComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'Matches', component:MatchesComponent},
   {path:'Leagues', component:LeaguesComponent},
   {path:'Tables/:league_id', component:TablesComponent},
+  {path:'Player/:player_id',component:PlayerComponent},
   {path:'About', component:AboutComponent},
   {path:'Contact', component:ContactComponent},
   {path:'',redirectTo:"/Home",pathMatch:'full'},

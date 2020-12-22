@@ -7,19 +7,18 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class YellowCardsService {
-
   constructor(private httpYellow:HttpClient) { }
 
   getYellow():Observable<IyellowCards>{
-    return this.httpYellow.get<IyellowCards>(`localhost:10278/api/yellow_cards`);
+    return this.httpYellow.get<IyellowCards>(`http://localhost:10278/api/yellow_cards`);
   }
-  getYellowPerPlayer(playerId:number):Observable<IyellowCards>{
-    return this.httpYellow.get<IyellowCards>(`localhost:10278/api/yellowPlayer/${playerId}`);
+  getYellowPerPlayer(player_id:number):Observable<IyellowCards>{
+    return this.httpYellow.get<IyellowCards>(`http://localhost:10278/api/yellowPlayer/${player_id}`);
   }
   getYellowPerMatch(matchId:number):Observable<IyellowCards>{
-    return this.httpYellow.get<IyellowCards>(`localhost:10278/api/yellowMatch/${matchId}`);
+    return this.httpYellow.get<IyellowCards>(`http://localhost:10278/api/yellowMatch/${matchId}`);
   }
   getYellowPerTeam(teamId:number):Observable<IyellowCards>{
-    return this.httpYellow.get<IyellowCards>(`localhost:10278/api/yellowTeam/${teamId}`);
+    return this.httpYellow.get<IyellowCards>(`http://localhost:10278/api/yellowTeam/${teamId}`);
   }
 }
