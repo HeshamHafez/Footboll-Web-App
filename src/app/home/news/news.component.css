@@ -9,3 +9,10 @@
     width: 75px !important;
     height: 75px !important;
 }
+
+.card-title{
+    display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
