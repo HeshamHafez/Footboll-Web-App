@@ -1,0 +1,14 @@
+#postTitle {
+    text-decoration: none !important;
+    font-size: 13px;
+    font-weight: 700;
+    color: black;
+}
+
+#postTitle:hover {
+    color: #76c100;
+}
+
+.postImg:hover {
+    border: 3px solid #76c100;
+}

@@ -19,6 +19,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SingleTeamComponent } from './home/teams/single-team/single-team.component';
 import { PlayerComponent } from './home/player/player.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { SinglePostComponent } from './home/news/single-post/single-post.component';
+import { TagsComponent } from './home/news/tags/tags.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,12 +39,16 @@ import { PlayerComponent } from './home/player/player.component';
     PagenotfoundComponent,
     SingleTeamComponent,
     PlayerComponent,
+    SinglePostComponent,
+    TagsComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    InfiniteScrollModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

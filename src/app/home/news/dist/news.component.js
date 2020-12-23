@@ -9,10 +9,16 @@ exports.__esModule = true;
 exports.NewsComponent = void 0;
 var core_1 = require("@angular/core");
 var NewsComponent = /** @class */ (function () {
-    function NewsComponent(_postTagServ) {
+    function NewsComponent(_postTagServ, _postServ, _tagServ, spinner) {
         this._postTagServ = _postTagServ;
+        this._postServ = _postServ;
+        this._tagServ = _tagServ;
+        this.spinner = spinner;
     }
     NewsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._postServ.getPost().subscribe(function (newsData) { return _this.postsList = newsData; }, function (error) { return console.log(error); });
+        this._tagServ.getTags().subscribe(function (tagsData) { return _this.tagsList = tagsData; }, function (error) { return console.log(error); });
     };
     NewsComponent = __decorate([
         core_1.Component({

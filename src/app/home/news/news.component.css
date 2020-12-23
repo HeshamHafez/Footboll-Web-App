@@ -1,0 +1,11 @@
+.news-area .recent-news .comment-box {
+    display: grid;
+    grid-template-columns: repeat(1, 70px 3fr);
+    grid-column-gap: 21px;
+}
+
+.hash {
+    color: #000 !important;
+    width: 75px !important;
+    height: 75px !important;
+}

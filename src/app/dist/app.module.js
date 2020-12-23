@@ -24,6 +24,10 @@ var contact_component_1 = require("./home/contact/contact.component");
 var pagenotfound_component_1 = require("./home/pagenotfound/pagenotfound.component");
 var http_1 = require("@angular/common/http");
 var forms_1 = require("@angular/forms");
+var single_team_component_1 = require("./home/teams/single-team/single-team.component");
+var player_component_1 = require("./home/player/player.component");
+var ngx_infinite_scroll_1 = require("ngx-infinite-scroll");
+var ngx_spinner_1 = require("ngx-spinner");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -41,13 +45,17 @@ var AppModule = /** @class */ (function () {
                 tables_component_1.TablesComponent,
                 about_component_1.AboutComponent,
                 contact_component_1.ContactComponent,
-                pagenotfound_component_1.PagenotfoundComponent
+                pagenotfound_component_1.PagenotfoundComponent,
+                single_team_component_1.SingleTeamComponent,
+                player_component_1.PlayerComponent,
             ],
             imports: [
                 platform_browser_1.BrowserModule,
                 http_1.HttpClientModule,
                 app_routing_module_1.AppRoutingModule,
-                forms_1.FormsModule
+                forms_1.FormsModule,
+                ngx_infinite_scroll_1.InfiniteScrollModule,
+                ngx_spinner_1.NgxSpinnerModule
             ],
             providers: [],
             bootstrap: [app_component_1.AppComponent]

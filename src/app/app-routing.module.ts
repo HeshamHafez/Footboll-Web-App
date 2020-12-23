@@ -1,3 +1,4 @@
+import { SinglePostComponent } from './home/news/single-post/single-post.component';
 import { SingleTeamComponent } from './home/teams/single-team/single-team.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -11,10 +12,13 @@ import { NewsComponent } from './home/news/news.component';
 import { PagenotfoundComponent } from './home/pagenotfound/pagenotfound.component';
 import { TeamsComponent } from './home/teams/teams.component';
 import { PlayerComponent } from './home/player/player.component';
+import { TagsComponent } from './home/news/tags/tags.component';
 
 const routes: Routes = [
   {path:'Home', component:HomeComponent},
   {path:'News', component:NewsComponent},
+  {path:'News/:id', component:SinglePostComponent},
+  {path:'Tags/:id', component:TagsComponent},
   {path:'Teams', component:TeamsComponent},
   {path:'Teams/:team_id', component:SingleTeamComponent},
   {path:'Matches', component:MatchesComponent},
