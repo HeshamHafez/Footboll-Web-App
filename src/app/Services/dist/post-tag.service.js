@@ -21,6 +21,9 @@ var PostTagService = /** @class */ (function () {
     PostTagService.prototype.getTagPosts = function (tag_id) {
         return this.httpPostTag.get("http://localhost:10278/api/tagposts/" + tag_id);
     };
+    PostTagService.prototype.getRecentTagPosts = function (tag_id) {
+        return this.httpPostTag.get("http://localhost:10278/api/recenttagposts/" + tag_id);
+    };
     PostTagService = __decorate([
         core_1.Injectable({
             providedIn: 'root'

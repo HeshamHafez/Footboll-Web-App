@@ -20,7 +20,6 @@ var matches_component_1 = require("./home/matches/matches.component");
 var leagues_component_1 = require("./home/leagues/leagues.component");
 var tables_component_1 = require("./home/leagues/tables/tables.component");
 var about_component_1 = require("./home/about/about.component");
-var contact_component_1 = require("./home/contact/contact.component");
 var pagenotfound_component_1 = require("./home/pagenotfound/pagenotfound.component");
 var http_1 = require("@angular/common/http");
 var forms_1 = require("@angular/forms");
@@ -28,6 +27,8 @@ var single_team_component_1 = require("./home/teams/single-team/single-team.comp
 var player_component_1 = require("./home/player/player.component");
 var ngx_infinite_scroll_1 = require("ngx-infinite-scroll");
 var ngx_spinner_1 = require("ngx-spinner");
+var single_post_component_1 = require("./home/news/single-post/single-post.component");
+var tags_component_1 = require("./home/news/tags/tags.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -44,10 +45,11 @@ var AppModule = /** @class */ (function () {
                 leagues_component_1.LeaguesComponent,
                 tables_component_1.TablesComponent,
                 about_component_1.AboutComponent,
-                contact_component_1.ContactComponent,
                 pagenotfound_component_1.PagenotfoundComponent,
                 single_team_component_1.SingleTeamComponent,
                 player_component_1.PlayerComponent,
+                single_post_component_1.SinglePostComponent,
+                tags_component_1.TagsComponent,
             ],
             imports: [
                 platform_browser_1.BrowserModule,

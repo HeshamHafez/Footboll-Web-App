@@ -17,4 +17,11 @@ export class PostsService {
   getPostsById(post_id:number):Observable<Iposts>{
     return this.httpPost.get<Iposts>(`http://localhost:10278/api/posts/${post_id}`);
   }
+
+  getRecentPosts():Observable<Iposts[]>{
+    return this.httpPost.get<Iposts[]>(`http://localhost:10278/api/recentposts`);
+  }
+  getPostsPerType():Observable<Iposts[]>{
+    return this.httpPost.get<Iposts[]>(`http://localhost:10278/api/poststype`);
+  }
 }

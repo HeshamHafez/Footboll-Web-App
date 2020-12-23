@@ -9,11 +9,12 @@ exports.__esModule = true;
 exports.SinglePostComponent = void 0;
 var core_1 = require("@angular/core");
 var SinglePostComponent = /** @class */ (function () {
-    function SinglePostComponent(_postTagServ, _postServ, _tagServ, route) {
+    function SinglePostComponent(_postTagServ, _postServ, _tagServ, route, loc) {
         this._postTagServ = _postTagServ;
         this._postServ = _postServ;
         this._tagServ = _tagServ;
         this.route = route;
+        this.loc = loc;
         this.maxPosts = 3;
     }
     SinglePostComponent.prototype.ngOnInit = function () {
@@ -23,7 +24,10 @@ var SinglePostComponent = /** @class */ (function () {
         });
         this._postServ.getPostsById(this.PostId).subscribe(function (postData) { return _this.returnPost = postData; }, function (error) { return console.log(error); });
         this._postTagServ.getPostTags(this.PostId).subscribe(function (posttagsData) { return _this.PostTagList = posttagsData; }, function (error) { return console.log(error); });
-        this._postServ.getPost().subscribe(function (postsData) { return _this.postsList = postsData; }, function (error) { return console.log(error); });
+        this._postServ.getRecentPosts().subscribe(function (postsData) { return _this.postsList = postsData; }, function (error) { return console.log(error); });
+    };
+    SinglePostComponent.prototype.goBack = function () {
+        this.loc.back();
     };
     SinglePostComponent = __decorate([
         core_1.Component({

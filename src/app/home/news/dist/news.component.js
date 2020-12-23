@@ -17,7 +17,7 @@ var NewsComponent = /** @class */ (function () {
     }
     NewsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this._postServ.getPost().subscribe(function (newsData) { return _this.postsList = newsData; }, function (error) { return console.log(error); });
+        this._postServ.getRecentPosts().subscribe(function (newsData) { return _this.postsList = newsData; }, function (error) { return console.log(error); });
         this._tagServ.getTags().subscribe(function (tagsData) { return _this.tagsList = tagsData; }, function (error) { return console.log(error); });
     };
     NewsComponent = __decorate([

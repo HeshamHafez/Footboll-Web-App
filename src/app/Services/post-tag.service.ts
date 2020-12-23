@@ -21,4 +21,8 @@ export class PostTagService {
   getTagPosts(tag_id:number):Observable<IpostTag[]>{
     return this.httpPostTag.get<IpostTag[]>(`http://localhost:10278/api/tagposts/${tag_id}`);
   }
+
+  getRecentTagPosts(tag_id:number):Observable<IpostTag[]>{
+    return this.httpPostTag.get<IpostTag[]>(`http://localhost:10278/api/recenttagposts/${tag_id}`);
+  }
 }

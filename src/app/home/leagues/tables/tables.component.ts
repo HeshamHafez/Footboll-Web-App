@@ -12,7 +12,9 @@ import {Location} from '@angular/common';
 export class TablesComponent implements OnInit {
 teamsList:ITeams[];
 leagueId:number;
-  constructor(private _teamServ:TeamsService, private route: ActivatedRoute, private loc:Location) { }
+  constructor(private _teamServ:TeamsService,
+    private route: ActivatedRoute,
+    private loc:Location) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {

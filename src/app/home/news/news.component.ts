@@ -19,7 +19,7 @@ PostTagList:IpostTag[];
   constructor(private _postTagServ:PostTagService, private _postServ: PostsService, private _tagServ: TagsService, private spinner:NgxSpinnerService) { }
 
   ngOnInit(): void {
-    this._postServ.getPost().subscribe(
+    this._postServ.getRecentPosts().subscribe(
       (newsData) => this.postsList = newsData,
       (error) => console.log(error)
     )

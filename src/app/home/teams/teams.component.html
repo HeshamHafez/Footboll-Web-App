@@ -22,7 +22,8 @@
                                 <tr *ngFor="let team of teamsList">
                                     <td colspan="3" class="team">
                                         <div class="team-box"><img class="sm-img" src="https://dummyimage.com/100x100.jpg&text={{team.name}}" alt="">
-                                            <span><a class=" singleTeam btn btn-lg" [routerLink]="['/Teams',team.team_id]">{{team.name}}</a></span></div>
+                                            <span><a style="font-weight: 900 !important;" class=" singleTeam btn btn-lg col-6" [routerLink]="['/Teams',team.team_id]">{{team.name}}</a></span>
+                                        </div>
                                     </td>
                                     <td colspan="2">{{team.coach}}</td>
 

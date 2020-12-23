@@ -9,12 +9,13 @@ exports.__esModule = true;
 exports.PlayerComponent = void 0;
 var core_1 = require("@angular/core");
 var PlayerComponent = /** @class */ (function () {
-    function PlayerComponent(_playerServ, route, _yellowServ, _redServ, _goalServ) {
+    function PlayerComponent(_playerServ, route, _yellowServ, _redServ, _goalServ, loc) {
         this._playerServ = _playerServ;
         this.route = route;
         this._yellowServ = _yellowServ;
         this._redServ = _redServ;
         this._goalServ = _goalServ;
+        this.loc = loc;
     }
     PlayerComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -25,6 +26,9 @@ var PlayerComponent = /** @class */ (function () {
         this._yellowServ.getYellowPerPlayer(this.playerId).subscribe(function (yellowData) { return _this.yellowList = yellowData; }, function (error) { return console.log(error); });
         this._redServ.getRedPerPlayer(this.playerId).subscribe(function (redData) { return _this.redList = redData; }, function (error) { return console.log(error); });
         this._goalServ.getGoalsPerPlayer(this.playerId).subscribe(function (goalData) { return _this.goalsList = goalData; }, function (error) { return console.log(error); });
+    };
+    PlayerComponent.prototype.goBack = function () {
+        this.loc.back();
     };
     PlayerComponent = __decorate([
         core_1.Component({

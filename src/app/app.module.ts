@@ -13,7 +13,6 @@ import { MatchesComponent } from './home/matches/matches.component';
 import { LeaguesComponent } from './home/leagues/leagues.component';
 import { TablesComponent } from './home/leagues/tables/tables.component';
 import { AboutComponent } from './home/about/about.component';
-import { ContactComponent } from './home/contact/contact.component';
 import { PagenotfoundComponent } from './home/pagenotfound/pagenotfound.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -35,7 +34,6 @@ import { TagsComponent } from './home/news/tags/tags.component';
     LeaguesComponent,
     TablesComponent,
     AboutComponent,
-    ContactComponent,
     PagenotfoundComponent,
     SingleTeamComponent,
     PlayerComponent,

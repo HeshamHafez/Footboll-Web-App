@@ -20,7 +20,10 @@
                             <tr *ngFor="let team of teamsList">
                                 <td colspan="4" class="team">
                                     <div class="team-box"><img class="sm-img" src="https://dummyimage.com/100x100.jpg&text={{team.name}}" alt="{{team.name}}">
-                                        <span>{{team.name}}</span></div>
+                                        <span>
+                                          <a style="font-weight: 900 !important;" class=" singleTeam btn btn-lg col-6" [routerLink]="['/Teams',team.team_id]">{{team.name}}</a>
+                                        </span>
+                                    </div>
                                 </td>
                                 <td>{{team.wins + team.draws + team.loss}}</td>
                                 <td>{{team.wins}}</td>
@@ -32,7 +35,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <a class="btn btn-primary" (click)="goBack()">Back</a>
+                    <a style="color: black;" class="btn btn-outline-warning col-12" (click)="goBack()">Back</a>
                 </div>
             </div>
         </div>

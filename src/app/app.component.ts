@@ -9,16 +9,16 @@ import {Subscription} from 'rxjs';
 })
 export class AppComponent implements OnInit, OnDestroy{
 
-   subscription : Subscription;
+  //  subscription : Subscription;
   constructor(private router: Router) {
   }
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    // this.subscription.unsubscribe();
   }
   ngOnInit(): void {
-    this.subscription = this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe(()=>window.scrollTo(0,0))
+    // this.subscription = this.router.events.pipe(
+    //   filter(event => event instanceof NavigationEnd)
+    // ).subscribe(()=>window.scrollTo(0,0))
   }
   title = 'footballwebapp';
 }

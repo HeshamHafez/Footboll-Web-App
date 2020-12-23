@@ -1,3 +1,9 @@
 /* .owl-carousel {
     display: block !important;
 } */
+
+.follow-us-area .link-box a {
+    background: white !important;
+    color: black !important;
+    text-decoration: none !important;
+}

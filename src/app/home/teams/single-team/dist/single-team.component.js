@@ -9,10 +9,11 @@ exports.__esModule = true;
 exports.SingleTeamComponent = void 0;
 var core_1 = require("@angular/core");
 var SingleTeamComponent = /** @class */ (function () {
-    function SingleTeamComponent(_teamServ, route, _playerServ) {
+    function SingleTeamComponent(_teamServ, route, _playerServ, loc) {
         this._teamServ = _teamServ;
         this.route = route;
         this._playerServ = _playerServ;
+        this.loc = loc;
     }
     SingleTeamComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -21,6 +22,9 @@ var SingleTeamComponent = /** @class */ (function () {
         });
         this._teamServ.getTeamsById(this.teamId).subscribe(function (teamData) { return _this.team = teamData; }, function (error) { return console.log(error); });
         this._playerServ.getplayerTeam(this.teamId).subscribe(function (playerData) { return _this.playersList = playerData; }, function (error) { return console.log(error); });
+    };
+    SingleTeamComponent.prototype.goBack = function () {
+        this.loc.back();
     };
     SingleTeamComponent = __decorate([
         core_1.Component({

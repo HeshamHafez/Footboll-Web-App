@@ -12,7 +12,6 @@ var single_team_component_1 = require("./home/teams/single-team/single-team.comp
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var about_component_1 = require("./home/about/about.component");
-var contact_component_1 = require("./home/contact/contact.component");
 var home_component_1 = require("./home/home.component");
 var leagues_component_1 = require("./home/leagues/leagues.component");
 var tables_component_1 = require("./home/leagues/tables/tables.component");
@@ -34,7 +33,6 @@ var routes = [
     { path: 'Tables/:league_id', component: tables_component_1.TablesComponent },
     { path: 'Player/:player_id', component: player_component_1.PlayerComponent },
     { path: 'About', component: about_component_1.AboutComponent },
-    { path: 'Contact', component: contact_component_1.ContactComponent },
     { path: '', redirectTo: "/Home", pathMatch: 'full' },
     { path: '**', component: pagenotfound_component_1.PagenotfoundComponent }
 ];

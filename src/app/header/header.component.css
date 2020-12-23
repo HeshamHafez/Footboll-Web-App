@@ -1,1 +1,7 @@
+#sliderlogo {
+    font-size: 200px;
+}
 
+#sliderlogo:hover {
+    color: #76c100 !important;
+}

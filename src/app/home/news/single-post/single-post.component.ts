@@ -6,6 +6,7 @@ import { Itags } from 'src/app/Models/Interfaces/itags';
 import { PostTagService } from 'src/app/Services/post-tag.service';
 import { PostsService } from 'src/app/Services/posts.service';
 import { TagsService } from 'src/app/Services/tags.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-single-post',
@@ -19,7 +20,12 @@ export class SinglePostComponent implements OnInit {
   PostTagList:IpostTag[];
   PostId:number;
   maxPosts: number;
-  constructor(private _postTagServ:PostTagService, private _postServ: PostsService, private _tagServ: TagsService, private route:ActivatedRoute) {
+
+  constructor(private _postTagServ:PostTagService,
+    private _postServ: PostsService,
+    private _tagServ: TagsService,
+    private route:ActivatedRoute,
+    private loc:Location) {
     this.maxPosts = 3;
   }
 
@@ -38,10 +44,13 @@ export class SinglePostComponent implements OnInit {
     (error) => console.log(error)
   )
 
-  this._postServ.getPost().subscribe(
+  this._postServ.getRecentPosts().subscribe(
     (postsData)=>this.postsList = postsData,
     (error) => console.log(error)
   )
   }
 
+  goBack(){
+    this.loc.back();
+   }
 }

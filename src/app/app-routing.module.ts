@@ -3,7 +3,6 @@ import { SingleTeamComponent } from './home/teams/single-team/single-team.compon
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './home/about/about.component';
-import { ContactComponent } from './home/contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { LeaguesComponent } from './home/leagues/leagues.component';
 import { TablesComponent } from './home/leagues/tables/tables.component';
@@ -26,7 +25,6 @@ const routes: Routes = [
   {path:'Tables/:league_id', component:TablesComponent},
   {path:'Player/:player_id',component:PlayerComponent},
   {path:'About', component:AboutComponent},
-  {path:'Contact', component:ContactComponent},
   {path:'',redirectTo:"/Home",pathMatch:'full'},
   {path:'**',component:PagenotfoundComponent}
 ];

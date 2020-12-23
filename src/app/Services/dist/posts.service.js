@@ -18,6 +18,12 @@ var PostsService = /** @class */ (function () {
     PostsService.prototype.getPostsById = function (post_id) {
         return this.httpPost.get("http://localhost:10278/api/posts/" + post_id);
     };
+    PostsService.prototype.getRecentPosts = function () {
+        return this.httpPost.get("http://localhost:10278/api/recentposts");
+    };
+    PostsService.prototype.getPostsPerType = function () {
+        return this.httpPost.get("http://localhost:10278/api/poststype");
+    };
     PostsService = __decorate([
         core_1.Injectable({
             providedIn: 'root'

@@ -9,6 +9,7 @@ import { Iplayers } from './../../Models/Interfaces/iplayers';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PlayersService } from 'src/app/Services/players.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-player',
@@ -21,7 +22,13 @@ yellowList:IyellowCards;
 redList:IredCards;
 goalsList:IgoalsCount;
 playerId:number;
-  constructor(private _playerServ:PlayersService,private route: ActivatedRoute, private _yellowServ:YellowCardsService,private _redServ:RedCardsService, private _goalServ:GoalsService) { }
+  constructor(private _playerServ:PlayersService,
+    private route: ActivatedRoute,
+    private _yellowServ:YellowCardsService,
+    private _redServ:RedCardsService,
+    private _goalServ:GoalsService,
+    private loc:Location
+) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -45,5 +52,9 @@ playerId:number;
     (error)=>console.log(error)
   )
   }
+
+  goBack(){
+    this.loc.back();
+   }
 
 }

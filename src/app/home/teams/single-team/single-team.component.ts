@@ -4,6 +4,7 @@ import { TeamsService } from './../../../Services/teams.service';
 import { ITeams } from './../../../Models/Interfaces/iteams';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-single-team',
@@ -14,7 +15,12 @@ export class SingleTeamComponent implements OnInit {
 team:ITeams;
 playersList:Iplayers[];
 teamId:number;
-  constructor(private _teamServ:TeamsService, private route: ActivatedRoute, private _playerServ:PlayersService) {}
+  constructor(
+    private _teamServ:TeamsService,
+    private route: ActivatedRoute,
+    private _playerServ:PlayersService,
+    private loc:Location
+    ) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -29,5 +35,9 @@ teamId:number;
     (error)=> console.log(error)
   )
   }
+
+  goBack(){
+    this.loc.back();
+   }
 
 }

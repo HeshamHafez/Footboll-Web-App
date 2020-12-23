@@ -9,11 +9,12 @@ exports.__esModule = true;
 exports.TagsComponent = void 0;
 var core_1 = require("@angular/core");
 var TagsComponent = /** @class */ (function () {
-    function TagsComponent(_postTagServ, _postServ, _tagServ, route) {
+    function TagsComponent(_postTagServ, _postServ, _tagServ, route, loc) {
         this._postTagServ = _postTagServ;
         this._postServ = _postServ;
         this._tagServ = _tagServ;
         this.route = route;
+        this.loc = loc;
         this.maxPosts = 3;
     }
     TagsComponent.prototype.ngOnInit = function () {
@@ -21,8 +22,11 @@ var TagsComponent = /** @class */ (function () {
         this.route.queryParams.subscribe(function (params) {
             _this.tagId = _this.route.snapshot.params.id;
         });
-        this._postTagServ.getTagPosts(this.tagId).subscribe(function (postsData) { return _this.PostTagList = postsData; }, function (error) { return console.log(error); });
-        this._postServ.getPost().subscribe(function (postsData) { return _this.postsList = postsData; }, function (error) { return console.log(error); });
+        this._postTagServ.getRecentTagPosts(this.tagId).subscribe(function (postsData) { return _this.PostTagList = postsData; }, function (error) { return console.log(error); });
+        this._postServ.getRecentPosts().subscribe(function (postsData) { return _this.postsList = postsData; }, function (error) { return console.log(error); });
+    };
+    TagsComponent.prototype.goBack = function () {
+        this.loc.back();
     };
     TagsComponent = __decorate([
         core_1.Component({
