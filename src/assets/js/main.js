@@ -38,7 +38,10 @@
             type: 'video'
         });
 
+
+
         $(".slider-area").owlCarousel({
+            
             smartSpeed: 700,
             autoplay: false,
             dots: false,

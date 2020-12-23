@@ -24,14 +24,17 @@ export class TeamsComponent implements OnInit {
       (leagueData)=>this.leaguesList = leagueData,
       (error)=>console.log(error)
     );
+
   }
 
   getSelected():void{
+    console.log("mmm");
+
     this._teamsServ.getLeagueTeams(this.SelLeagueId).subscribe(
       (leagueData)=>this.teamsList = leagueData,
       (error)=>console.log(error)
     );
-
+    
   }
 
 

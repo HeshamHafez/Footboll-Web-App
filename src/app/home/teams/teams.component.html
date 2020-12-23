@@ -1,8 +1,8 @@
 <div class="container">
     <div #div1 class="form-group mt-5">
         <label for="my-select">Top Leagues</label>
-        <select [(ngModel)]="SelLeagueId" id="my-select" class="form-control" name="Top Leagues">
-      <option *ngFor="let league of leaguesList" (click)="getSelected()" [value]="league.league_id">{{league.name}}</option>
+        <select [(ngModel)]="SelLeagueId" id="my-select" class="form-control" name="Top Leagues" (click)="getSelected()">
+      <option *ngFor="let league of leaguesList"  [value]="league.league_id">{{league.name}}</option>
   </select>
     </div>
 

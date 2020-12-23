@@ -1,7 +1,12 @@
-#sliderlogo {
-    font-size: 200px;
+.sliderlogo {
+    font-size: 100px !important;
 }
 
-#sliderlogo:hover {
+.sliderlogo:hover {
     color: #76c100 !important;
 }
+
+.carousel-height{
+    max-height: 720px;
+}
+
